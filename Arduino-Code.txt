@@ -1,0 +1,28 @@
+int x_pin = A0;
+int y_pin = A1;
+int sw_pin = 2;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(x_pin, INPUT);
+  pinMode(y_pin, INPUT);
+  pinMode(sw_pin, INPUT_PULLUP); // Internen Pull-up-Widerstand für Schalter aktivieren
+}
+
+void loop() {
+  int x_data = analogRead(x_pin);
+  int y_data = analogRead(y_pin);
+  int sw_data = digitalRead(sw_pin);
+
+  // Löschen Sie die vorherige Zeile mit einem Zeilenumbruch
+  Serial.println();
+
+  // Den aktuellen Datenwert als CSV-String in einer neuen Zeile senden
+  Serial.print(x_data);
+  Serial.print(" ");
+  Serial.print(y_data);
+  Serial.print(" ");
+  Serial.println(sw_data);
+
+  delay(100); // Eine kurze Verzögerung, um die Datenübertragung zu verlangsamen
+}
