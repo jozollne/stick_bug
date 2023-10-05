@@ -1,13 +1,16 @@
 <template>
   <div class="app" :class="(mode === 'dark') ? 'dark' : ''">
-    <WebSocketData/>
+    <!--<WebSocketData/>-->
+    <Monitor/>
   </div>
 </template>
 
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import WebSocketData from './components/WebSocketData.vue';
+//import WebSocketData from './components/WebSocketData.vue';
+import Monitor from './components/Monitor.vue';
+
 
 export default defineComponent ({
   data() {
@@ -18,8 +21,10 @@ export default defineComponent ({
   },
 
   components: {
-    WebSocketData
+  //WebSocketData,
+  Monitor
 },
+
 
     methods: {  
   },
